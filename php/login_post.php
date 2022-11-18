@@ -1,5 +1,5 @@
 <?php
-    require_once("./pdo.php");
+    require_once("./query.php");
 
     $member_id = isset($_POST['member_id']) ? $_POST['member_id'] : null;
     $member_password = isset($_POST['member_password']) ? $_POST['member_password'] : null;
@@ -9,7 +9,7 @@
         echo "
             <script>
                 alert('아이디/비밀번호를 입력해주세요.');
-                history.go(-1)
+                history.go(-1);
             </script>
             ";
         exit();
@@ -19,7 +19,12 @@
     $member_data = db_select("SELECT * FROM member WHERE member_id = ?",array($member_id));
     //회원 데이터 없는경우
     if($member_data == null || count($member_data) == 0) {
-        echo "<script>alert('sdasdf');</script>";
+        echo "
+            <script>
+                alert('존재하지 않는 회원입니다.');
+                history.go(-1);
+            </script>
+            ";
         // header("Location: /index.html");
         exit();
     }
@@ -29,8 +34,12 @@
     $is_match_password = 0;
     //비밀번호 불일치
     if ($is_match_password === false) {
-        echo "<script>alert('비밀번호 불일치!');</script>";
-        header("Location: /index.html");
+        echo "
+            <script>
+                alert('비밀번호가 일치하지 않습니다.');
+                history.go(-1);
+            </script>
+            ";
         exit();
     }
 
