@@ -25,7 +25,6 @@
                 history.go(-1);
             </script>
             ";
-        // header("Location: /index.html");
         exit();
     }
 
@@ -45,6 +44,11 @@
 
     session_start();
     $_SESSION['member_no'] = $member_data[0]['member_no'];
+    $_SESSION['member_nickname'] = $member_data[0]['member_nickname'];
+    // confirm passed data 
+    // echo "<pre>";
+    // print_r($member_data);
+    // echo "</pre>";
 
     header("Location: /index.html");
 

@@ -4,6 +4,7 @@
      function db_select($query, $param=array()){
         $pdo = db_get_pdo();
         try {
+            //prepared stmt, execute(array()) - bindValue(값대입), bindParam(변수대입), array of input-only param value
             $stmt = $pdo->prepare($query);
             $stmt->execute($param);
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
