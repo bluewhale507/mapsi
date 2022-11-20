@@ -2599,6 +2599,27 @@ ol {
 	margin-bottom: 20px;
 }
 
+.signUp__input__id {
+	margin-bottom: 20px;
+}
+
+.signUp__input__id p span {
+	color: #e53637;
+}
+
+.signUp__input__id input{
+	height: 50px;
+	width: 68%;
+	border: 1px solid #e1e1e1;
+	font-size: 14px;
+	color: #b7b7b7;
+	padding-left: 20px;
+}
+
+.signUp__input__id .site-btn {
+	width: 30%;
+}
+
 .signUp__input__address {
 	margin-bottom: 20px;
 }
@@ -2609,7 +2630,6 @@ ol {
 
 .signUp__input__address input:nth-child(1){
 	height: 50px;
-	width: 40%;
 	border: 1px solid #e1e1e1;
 	font-size: 14px;
 	color: #b7b7b7;
@@ -2625,6 +2645,8 @@ ol {
 	padding-left: 20px;
 	margin-top: 5px;
 }
+
+
 
 .signUp__input input::-webkit-input-placeholder {
 	color: #b7b7b7;
